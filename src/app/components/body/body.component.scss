@@ -10,7 +10,16 @@
     color: #999999;  font-weight: 400;  font-size: 1.5rem;
 }
 
+.header{
+    padding-top: 80px;
+}
+
 @media only screen and (max-width: 950px) {
+
+    .header{
+        padding: 40px 0 0 0;
+    }
+
     .logo{
         height: 80px;
     }
@@ -22,4 +31,23 @@
     .subtitulo{
         font-size: 15px;
     }
-  }
+}
+
+@media only screen and (max-width: 370px) {
+
+    .header{
+        padding: 20px 0 0 0;
+    }
+
+    .logo{
+        height: 50px;
+    }
+
+    .titulo{
+        font-size: 15px;
+    }
+
+    .subtitulo{
+        font-size: 10px;
+    }
+}
