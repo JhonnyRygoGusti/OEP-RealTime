@@ -30,25 +30,21 @@ export class ResultadosComponent implements OnInit {
       animateScale: false,
     },
     plugins: {
-      // Change options for ALL labels of THIS CHART
       datalabels: {
-        color: 'white',
-        align: 'top',
-        borderColor: 'white',
-        font: {
-          weight: 'bold',
-          size: 15,
-        },
-        backgroundColor: '#1fb807',
+        color: 'black',
+        align: 'end',
+        backgroundColor: 'white',
+        padding: 2,
+        opacity: 0.8,
         borderRadius: 5,
         formatter: (value, context) => {
           return `${this.percentagePolitic[context.dataIndex]} %`;
         }
       }
-  }
+    }
   };
   barChartLabels: Label[] = [];
-  barChartType: ChartType = 'bar';
+  barChartType: ChartType = 'horizontalBar';
   barChartLegend = true;
   barChartPlugins = [];
 
@@ -90,11 +86,6 @@ export class ResultadosComponent implements OnInit {
           backgroundColor: dataColor,
           hoverBackgroundColor: dataColor,
         });
-
-        this.barChartOptions = {
-          ... this.barChartOptions,
-          
-        }
       }),
       ((error: any) => {
         this.loading = false;
@@ -111,7 +102,7 @@ export class ResultadosComponent implements OnInit {
   onResize(event: any) {
     event.target.innerWidth;
     if (event.target.innerWidth <= 1000) {
-      this.barChartType = 'doughnut'
+      this.barChartType = 'horizontalBar'
     } else{
       this.barChartType = 'bar'
     }
