@@ -1,0 +1,25 @@
+.logo{
+    height: 125px;
+}
+
+.titulo{
+    color: #8c2c1c;  font-family: Arial Black, Arial Bold, Helvetica, sans-serif;
+}
+
+.subtitulo{
+    color: #999999;  font-weight: 400;  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 950px) {
+    .logo{
+        height: 80px;
+    }
+
+    .titulo{
+        font-size: 20px;
+    }
+
+    .subtitulo{
+        font-size: 15px;
+    }
+  }
