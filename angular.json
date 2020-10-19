@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "OEP-RealTime"
+    }
+  },
+  "defaultProject": "OEP-RealTime",
+  "cli": {
+    "analytics": "efa4e980-7bbe-40ba-a0ea-9a1d760e9f9a"
+  }
 }

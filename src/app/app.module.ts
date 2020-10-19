@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { ResultadosComponent } from './components/resultados/resultados.component';
 import { ActasComponent } from './components/actas/actas.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ActasComponent } from './components/actas/actas.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

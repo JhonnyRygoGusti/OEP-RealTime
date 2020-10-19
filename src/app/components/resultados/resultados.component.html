@@ -123,4 +123,17 @@
             </tbody>
           </table>
     </div>
+    <div class="chart-wrapper">
+      <canvas
+        width="1000px"
+        baseChart 
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+      >
+    </canvas>
+  </div>
 </div>
