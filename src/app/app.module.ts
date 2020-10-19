@@ -13,6 +13,8 @@ import { ResultadosComponent } from './components/resultados/resultados.componen
 import { ActasComponent } from './components/actas/actas.component';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgOptionHighlightModule,
     FormsModule,
     ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
