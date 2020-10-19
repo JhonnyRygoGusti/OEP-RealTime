@@ -86,5 +86,6 @@ export class ResultadosComponent implements OnInit {
       this.spinner.hide()
     }, 5000)
   }
+   
 
 }

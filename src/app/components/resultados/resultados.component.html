@@ -1,9 +1,9 @@
-<div class="row pt-5">
+<div class="row pt-5" *ngIf="!loading">
     <div class="col-md-6">
         <div class="chart-wrapper">
             <canvas
                 width="1000px"
-                baseChart 
+                baseChart
                 [datasets]="barChartData"
                 [labels]="barChartLabels"
                 [options]="barChartOptions"
@@ -13,7 +13,7 @@
             >
             </canvas>
         </div>
-        <ngx-spinner></ngx-spinner>
+        
         <!-- <form role="form">
             <div class="card-body row">
                 <div class="form-group col-md-6">
@@ -109,3 +109,7 @@
     </div>
     
 </div>
+<div class="row">
+    <div class="col-md-12 text-center"><h2>{{updateDate}}</h2></div>
+</div>
+<ngx-spinner></ngx-spinner>
