@@ -15,7 +15,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class ResultadosComponent implements OnInit {
 
   politicParties: [PoliticParty];
-  table: [Table];
+  table: Table[];
   updateDate: string;
   correct: boolean;
   loading: boolean;
@@ -52,6 +52,7 @@ export class ResultadosComponent implements OnInit {
     this.spinner.show()
     setInterval(() => {      
       this.computingService.getData().subscribe(((data: any) => {
+        console.log(data);
         this.politicParties = data.datoAdicional.grafica as [PoliticParty];
         this.table = data.datoAdicional.tabla as [Table];
         this.updateDate = data.fecha as string;
