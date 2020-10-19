@@ -1,6 +1,6 @@
 <div class="row pt-5" *ngIf="!loading">
-    <div class="col-md-6">
-        <div class="chart-wrapper">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-12">
+        <div class="chart-wrapper bg-white rounded p-1">
             <canvas
                 width="1000px"
                 baseChart
@@ -12,8 +12,7 @@
                 [chartType]="barChartType"
             >
             </canvas>
-        </div>
-        
+        </div> 
         <!-- <form role="form">
             <div class="card-body row">
                 <div class="form-group col-md-6">
@@ -89,8 +88,8 @@
             </div>
         </form> -->
     </div>
-    <div class="col-md-6">
-        <table class="table table-bordered">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-12">
+        <table class="table table-bordered bg-white rounded p-1">
             <thead>
               <tr class="tbl-header">
                 <th scope="col">Detalle</th>
@@ -102,14 +101,15 @@
               <tr *ngFor="let item of table">
                 <td>{{item.nombre}}</td>
                 <td>{{item.valor}}</td>
-                <td>{{item.porcien}}</td>
+                <td *ngIf="item.porcien !== null">{{item.porcien}} %</td>
+                <td *ngIf="item.porcien == null">---</td>
               </tr>
             </tbody>
           </table>
     </div>
-    
 </div>
 <div class="row">
-    <div class="col-md-12 text-center"><h2>{{updateDate}}</h2></div>
+    <div class="col-md-12 text-center rounded-pill bg-white mt-3 mb-5"><h2>{{updateDate}}</h2></div>
 </div>
+<div (window:resize)="onResize($event)"></div>
 <ngx-spinner></ngx-spinner>
