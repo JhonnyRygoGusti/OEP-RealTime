@@ -8,13 +8,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { ResultadosComponent } from './components/resultados/resultados.component';
+import { ActasComponent } from './components/actas/actas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BodyComponent,
-    ResultadosComponent
+    ResultadosComponent,
+    ActasComponent
   ],
   imports: [
     BrowserModule,

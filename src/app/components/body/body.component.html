@@ -1,15 +1,23 @@
 <div class="row">
     <div class="col-md-12">
         <div class="d-flex justify-content-around">
-            <img src="assets/logoOEP.png" alt="">
-            <div class="container text-center">
-                <h2>ELECCIONES GENERALES 2020</h2>
-                <h3>SISTEMA DE CONSOLIDACIÓN OFICIAL DE RESULTADOS DE CÓMPUTO EN PROCESO </h3>
+            <img src="assets/logoOEP.png" alt="" style="height: 125px;">
+            <div class="container text-center" style="padding-top: 80px;">
+                <h2 style="color: #8c2c1c;  font-family: Arial Black, Arial Bold, Helvetica, sans-serif;">ELECCIONES GENERALES 2020</h2>
+                <h3 style="color: #999999;  font-weight: 400;  font-size: 1.5rem;">SISTEMA DE CONSOLIDACIÓN OFICIAL DE RESULTADOS DE CÓMPUTO EN PROCESO </h3>
             </div>            
-            <img src="assets/eleccionesLogo.png" alt="">
+            <img src="assets/eleccionesLogo.png" alt="" style="height: 125px;">
         </div>
     </div>
     <div class="col-md-12">
-        <app-resultados></app-resultados>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-info">Resultados</button>
+            <button type="button" class="btn btn-info">Actas</button>
+        </div>
+        <div class="dropdown-divider"></div>
+    </div>
+    <div class="col-md-12">
+        <!-- <app-resultados></app-resultados> -->
+        <router-outlet></router-outlet>        
     </div>
 </div>
