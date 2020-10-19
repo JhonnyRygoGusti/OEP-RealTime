@@ -24,6 +24,7 @@ export class ResultadosComponent implements OnInit {
     responsive: true,
     animation: {
       duration: 0,
+      animateScale: false,
     },
   };
   barChartLabels: Label[] = [];//['Apple', 'Banana', 'Kiwifruit', 'Blueberry', 'Orange', 'Grapes'];
@@ -47,8 +48,7 @@ export class ResultadosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setInterval(() => {
-      this.barChartData = [];
+    setInterval(() => {      
       this.computingService.getData().subscribe(((data: any) => {
         this.politicParties = data.datoAdicional.grafica as [PoliticParty];
         this.table = data.datoAdicional.tabla as [Table];
@@ -67,6 +67,7 @@ export class ResultadosComponent implements OnInit {
           arrayColor.push(politic.color);
           return arrayColor;
         }, []);
+        this.barChartData = [];
         this.barChartData.push({
           data: dataPercentaje,
           label: 'Elecciones Generales 2020',
