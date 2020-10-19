@@ -14,7 +14,7 @@ import { Label } from 'ng2-charts';
 export class ResultadosComponent implements OnInit {
 
   politicParties: [PoliticParty];
-  table: [Table];
+  table: Table[];
   updateDate: string;
   correct: boolean;
   loading: boolean;
@@ -50,6 +50,7 @@ export class ResultadosComponent implements OnInit {
   ngOnInit(): void {
     setInterval(() => {      
       this.computingService.getData().subscribe(((data: any) => {
+        console.log(data);
         this.politicParties = data.datoAdicional.grafica as [PoliticParty];
         this.table = data.datoAdicional.tabla as [Table];
         this.updateDate = data.fecha as string;

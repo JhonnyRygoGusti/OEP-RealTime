@@ -1,5 +1,5 @@
 <div class="row pt-5">
-    <div class="col-md-8 ">
+    <div class="col-md-6">
         <div class="chart-wrapper">
             <canvas
                 width="1000px"
@@ -88,7 +88,7 @@
             </div>
         </form> -->
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <table class="table table-bordered">
             <thead>
               <tr class="tbl-header">
@@ -98,20 +98,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+              <tr *ngFor="let item of table">
+                <td>{{item.nombre}}</td>
+                <td>{{item.valor}}</td>
+                <td>{{item.porcien}}</td>
               </tr>
             </tbody>
           </table>
