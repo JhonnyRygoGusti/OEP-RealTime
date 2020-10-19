@@ -14,11 +14,11 @@ export class BodyComponent implements OnInit {
   }
 
   goResultados(){
-    this.router.navigate(['resultado']);
+    this.router.navigate(['resultados']);
   }
 
   goActas(){
-    // this.router.navigate(['actas']);
+    this.router.navigate(['actas']);
   }
 
 }
