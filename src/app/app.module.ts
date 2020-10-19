@@ -29,7 +29,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
     NgSelectModule,
     NgOptionHighlightModule,
     FormsModule,

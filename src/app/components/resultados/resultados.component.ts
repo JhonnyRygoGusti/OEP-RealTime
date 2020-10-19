@@ -22,19 +22,23 @@ export class ResultadosComponent implements OnInit {
   //chart
   barChartOptions: ChartOptions = {
     responsive: true,
+    animation: {
+      duration: 0,
+    },
   };
   barChartLabels: Label[] = [];//['Apple', 'Banana', 'Kiwifruit', 'Blueberry', 'Orange', 'Grapes'];
   barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartPlugins = [];
 
-  barChartData: ChartDataSets[] = [];/*[
+  barChartData: ChartDataSets[] = [
     { 
       data: [45, 37, 60, 70, 46, 33],
       label: 'Elecciones Generales 2020',
       backgroundColor: ['red', 'red', 'blue', 'orange', 'black', 'green'],
+      
     },
-  ];*/
+  ];
 
   constructor(private computingService: ComputingService) {
     this.correct = true;
