@@ -1,9 +1,10 @@
 import { ComputingService } from './../../services/computing.service';
 import { Table } from './../../models/table';
 import { PoliticParty } from './../../models/politic-party';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-resultados',
@@ -41,13 +42,14 @@ export class ResultadosComponent implements OnInit {
     },
   ];
 
-  constructor(private computingService: ComputingService) {
+  constructor(private computingService: ComputingService, private spinner: NgxSpinnerService) {
     this.correct = true;
     this.loading = true;
     this.updateDate = Date.now().toString()
   }
 
   ngOnInit(): void {
+    this.spinner.show()
     setInterval(() => {      
       this.computingService.getData().subscribe(((data: any) => {
         this.politicParties = data.datoAdicional.grafica as [PoliticParty];
@@ -80,6 +82,7 @@ export class ResultadosComponent implements OnInit {
         console.log(error);
       })
       )
+      this.spinner.hide()
     }, 5000)
   }
 

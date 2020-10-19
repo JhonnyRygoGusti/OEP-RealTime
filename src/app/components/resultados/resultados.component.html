@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-8 ">
-        <div class="chart-wrapper">
+        <div class="chart-wrapper" *ngIf="!loading">
             <canvas
                 width="1000px"
                 baseChart 
@@ -13,6 +13,7 @@
             >
             </canvas>
         </div>
+        <ngx-spinner></ngx-spinner>
         <!-- <form role="form">
             <div class="card-body row">
                 <div class="form-group col-md-6">
