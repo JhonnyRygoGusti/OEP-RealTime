@@ -17,13 +17,15 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BodyComponent,
     ResultadosComponent,
-    ActasComponent
+    ActasComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
