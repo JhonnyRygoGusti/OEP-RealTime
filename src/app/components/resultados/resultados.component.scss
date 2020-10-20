@@ -2,3 +2,29 @@
     background: linear-gradient(90deg, rgb(86 35 19) 0%, rgba(140,44,28,1) 50%, rgb(220 110 91) 100%);
     color: white;
 }
+
+.fixex-btn-float{
+    position: fixed;
+    bottom: 1.7rem;
+    right: 1rem;
+    z-index: 1100;
+}
+
+.fixex-btn-float-percentaje{
+    position: fixed;
+    bottom: 1.7rem;
+    left: 1rem;
+    z-index: 1100;
+}
+
+@media only screen and (max-width: 900px) {
+    #canva-container{
+        height: 80vh;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #canva-container{
+        height: 70vh;
+    }
+}

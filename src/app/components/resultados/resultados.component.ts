@@ -21,6 +21,7 @@ export class ResultadosComponent implements OnInit {
   correct: boolean;
   loading: boolean;
   percentagePolitic: number[];
+  percentajeGeneral: number;
 
   //chart
   barChartOptions: ChartOptions = {
@@ -41,7 +42,8 @@ export class ResultadosComponent implements OnInit {
           return `${this.percentagePolitic[context.dataIndex]} %`;
         }
       }
-    }
+    },
+    maintainAspectRatio: false
   };
   barChartLabels: Label[] = [];
   barChartType: ChartType = 'horizontalBar';
@@ -55,6 +57,7 @@ export class ResultadosComponent implements OnInit {
     this.loading = true;
     this.updateDate = 'Cargando...';
     this.percentagePolitic = [];
+    this.percentajeGeneral = 0;
   }
 
   ngOnInit(): void {
@@ -66,6 +69,7 @@ export class ResultadosComponent implements OnInit {
         this.updateDate = data.fecha as string;
         this.correct = data.correcto as boolean;
         this.loading = false;
+        this.percentajeGeneral = this.table[6].porcien;
         this.barChartLabels = this.politicParties.reduce((arrayLabels: Label[], politic: PoliticParty) => {
           arrayLabels.push(politic.nombre);
           return arrayLabels;
@@ -100,11 +104,10 @@ export class ResultadosComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    event.target.innerWidth;
     if (event.target.innerWidth <= 1000) {
-      this.barChartType = 'horizontalBar'
+      this.barChartType = 'horizontalBar';
     } else{
-      this.barChartType = 'bar'
+      this.barChartType = 'bar';
     }
   }
 }
